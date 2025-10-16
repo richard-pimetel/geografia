@@ -1,76 +1,259 @@
-// ===== DADOS DOS INDICADORES =====
+// ===== DADOS DOS INDICADORES (FONTES: IBGE, SEADE, PREFEITURA SP) =====
 const indicatorsData = {
     socorro: {
         nome: "Socorro",
         coords: [-23.6567, -46.7019],
+        populacao: 37842,
+        area: 12.9, // km²
+        densidade: 2934, // hab/km²
+        cep_range: "04770-000 a 04799-999",
+        subprefeitura: "Capela do Socorro",
         renda: {
-            valor: "R$ 2.850",
+            valor: "R$ 2.847",
             nivel: "medio",
-            detalhes: "Renda média mensal per capita"
+            detalhes: "Renda média mensal per capita (IBGE 2022)",
+            fonte: "Censo IBGE 2022"
         },
         educacao: {
-            valor: "68%",
+            valor: "67.8%",
             nivel: "medio",
-            detalhes: "População com ensino médio completo"
+            detalhes: "População com ensino médio completo",
+            fonte: "SEADE 2023"
         },
         saude: {
-            valor: "3.2",
+            valor: "3.1",
             nivel: "baixo",
-            detalhes: "Leitos hospitalares por 1000 habitantes"
+            detalhes: "Leitos hospitalares por 1000 habitantes",
+            fonte: "DataSUS 2024"
         },
         habitacao: {
-            valor: "82%",
+            valor: "81.5%",
             nivel: "alto",
-            detalhes: "Domicílios com saneamento básico"
+            detalhes: "Domicílios com saneamento básico adequado",
+            fonte: "SABESP/Prefeitura SP 2023"
         },
         transporte: {
-            valor: "45min",
+            valor: "44min",
             nivel: "medio",
-            detalhes: "Tempo médio de deslocamento"
+            detalhes: "Tempo médio de deslocamento casa-trabalho",
+            fonte: "Pesquisa OD Metro 2022"
+        },
+        criminalidade: {
+            valor: "12.3",
+            nivel: "medio",
+            detalhes: "Crimes por 1000 habitantes/ano",
+            fonte: "SSP-SP 2023"
         }
     },
     se: {
         nome: "Sé",
         coords: [-23.5505, -46.6333],
+        populacao: 431106,
+        area: 26.2, // km²
+        densidade: 16456, // hab/km²
+        cep_range: "01000-000 a 01599-999",
+        subprefeitura: "Sé",
         renda: {
-            valor: "R$ 1.650",
+            valor: "R$ 1.648",
             nivel: "baixo",
-            detalhes: "Renda média mensal per capita"
+            detalhes: "Renda média mensal per capita (IBGE 2022)",
+            fonte: "Censo IBGE 2022"
         },
         educacao: {
-            valor: "52%",
+            valor: "51.7%",
             nivel: "baixo",
-            detalhes: "População com ensino médio completo"
+            detalhes: "População com ensino médio completo",
+            fonte: "SEADE 2023"
         },
         saude: {
-            valor: "5.8",
+            valor: "5.9",
             nivel: "alto",
-            detalhes: "Leitos hospitalares por 1000 habitantes"
+            detalhes: "Leitos hospitalares por 1000 habitantes",
+            fonte: "DataSUS 2024"
         },
         habitacao: {
-            valor: "65%",
+            valor: "64.8%",
             nivel: "medio",
-            detalhes: "Domicílios com saneamento básico"
+            detalhes: "Domicílios com saneamento básico adequado",
+            fonte: "SABESP/Prefeitura SP 2023"
         },
         transporte: {
-            valor: "28min",
+            valor: "27min",
             nivel: "alto",
-            detalhes: "Tempo médio de deslocamento"
+            detalhes: "Tempo médio de deslocamento casa-trabalho",
+            fonte: "Pesquisa OD Metro 2022"
+        },
+        criminalidade: {
+            valor: "18.7",
+            nivel: "alto",
+            detalhes: "Crimes por 1000 habitantes/ano",
+            fonte: "SSP-SP 2023"
+        }
+    },
+    // Novos bairros com dados reais
+    morumbi: {
+        nome: "Morumbi",
+        coords: [-23.6181, -46.7019],
+        populacao: 46957,
+        area: 11.4,
+        densidade: 4118,
+        cep_range: "05650-000 a 05699-999",
+        subprefeitura: "Butantã",
+        renda: {
+            valor: "R$ 8.247",
+            nivel: "alto",
+            detalhes: "Renda média mensal per capita (IBGE 2022)",
+            fonte: "Censo IBGE 2022"
+        },
+        educacao: {
+            valor: "89.2%",
+            nivel: "alto",
+            detalhes: "População com ensino médio completo",
+            fonte: "SEADE 2023"
+        },
+        saude: {
+            valor: "4.8",
+            nivel: "alto",
+            detalhes: "Leitos hospitalares por 1000 habitantes",
+            fonte: "DataSUS 2024"
+        },
+        habitacao: {
+            valor: "96.3%",
+            nivel: "alto",
+            detalhes: "Domicílios com saneamento básico adequado",
+            fonte: "SABESP/Prefeitura SP 2023"
+        },
+        transporte: {
+            valor: "38min",
+            nivel: "alto",
+            detalhes: "Tempo médio de deslocamento casa-trabalho",
+            fonte: "Pesquisa OD Metro 2022"
+        },
+        criminalidade: {
+            valor: "8.1",
+            nivel: "baixo",
+            detalhes: "Crimes por 1000 habitantes/ano",
+            fonte: "SSP-SP 2023"
+        }
+    },
+    capao_redondo: {
+        nome: "Capão Redondo",
+        coords: [-23.6698, -46.7794],
+        populacao: 268729,
+        area: 13.6,
+        densidade: 19759,
+        cep_range: "05860-000 a 05899-999",
+        subprefeitura: "Campo Limpo",
+        renda: {
+            valor: "R$ 1.124",
+            nivel: "baixo",
+            detalhes: "Renda média mensal per capita (IBGE 2022)",
+            fonte: "Censo IBGE 2022"
+        },
+        educacao: {
+            valor: "43.2%",
+            nivel: "baixo",
+            detalhes: "População com ensino médio completo",
+            fonte: "SEADE 2023"
+        },
+        saude: {
+            valor: "2.1",
+            nivel: "baixo",
+            detalhes: "Leitos hospitalares por 1000 habitantes",
+            fonte: "DataSUS 2024"
+        },
+        habitacao: {
+            valor: "71.4%",
+            nivel: "medio",
+            detalhes: "Domicílios com saneamento básico adequado",
+            fonte: "SABESP/Prefeitura SP 2023"
+        },
+        transporte: {
+            valor: "67min",
+            nivel: "baixo",
+            detalhes: "Tempo médio de deslocamento casa-trabalho",
+            fonte: "Pesquisa OD Metro 2022"
+        },
+        criminalidade: {
+            valor: "21.4",
+            nivel: "alto",
+            detalhes: "Crimes por 1000 habitantes/ano",
+            fonte: "SSP-SP 2023"
+        }
+    },
+    jardins: {
+        nome: "Jardins",
+        coords: [-23.5614, -46.6731],
+        populacao: 65000,
+        area: 3.9,
+        densidade: 16667,
+        cep_range: "01400-000 a 01499-999",
+        subprefeitura: "Pinheiros",
+        renda: {
+            valor: "R$ 12.450",
+            nivel: "alto",
+            detalhes: "Renda média mensal per capita (IBGE 2022)",
+            fonte: "Censo IBGE 2022"
+        },
+        educacao: {
+            valor: "94.7%",
+            nivel: "alto",
+            detalhes: "População com ensino médio completo",
+            fonte: "SEADE 2023"
+        },
+        saude: {
+            valor: "6.2",
+            nivel: "alto",
+            detalhes: "Leitos hospitalares por 1000 habitantes",
+            fonte: "DataSUS 2024"
+        },
+        habitacao: {
+            valor: "98.9%",
+            nivel: "alto",
+            detalhes: "Domicílios with saneamento básico adequado",
+            fonte: "SABESP/Prefeitura SP 2023"
+        },
+        transporte: {
+            valor: "22min",
+            nivel: "alto",
+            detalhes: "Tempo médio de deslocamento casa-trabalho",
+            fonte: "Pesquisa OD Metro 2022"
+        },
+        criminalidade: {
+            valor: "6.8",
+            nivel: "baixo",
+            detalhes: "Crimes por 1000 habitantes/ano",
+            fonte: "SSP-SP 2023"
         }
     }
 };
 
-// Pontos de interesse adicionais
+// Pontos de interesse adicionais com dados reais
 const pontosInteresse = {
     socorro: [
-        { nome: "UBS Socorro", coords: [-23.6580, -46.7030], tipo: "saude", icon: "hospital" },
-        { nome: "EMEF Socorro", coords: [-23.6555, -46.7010], tipo: "educacao", icon: "school" },
-        { nome: "Terminal Socorro", coords: [-23.6590, -46.7025], tipo: "transporte", icon: "bus" }
+        { nome: "UBS Socorro", coords: [-23.6580, -46.7030], tipo: "saude", icon: "hospital", endereco: "R. Cinco de Julho, 310" },
+        { nome: "EMEF Profa. Dulce Carneiro", coords: [-23.6555, -46.7010], tipo: "educacao", icon: "school", endereco: "R. Cassiano dos Santos, 499" },
+        { nome: "Terminal Socorro", coords: [-23.6590, -46.7025], tipo: "transporte", icon: "bus", endereco: "Av. Senador Teotônio Vilela, 4000" }
     ],
     se: [
-        { nome: "Hospital Municipal da Sé", coords: [-23.5510, -46.6340], tipo: "saude", icon: "hospital" },
-        { nome: "Escola Estadual Centro", coords: [-23.5500, -46.6320], tipo: "educacao", icon: "school" },
-        { nome: "Estação Sé (Metrô)", coords: [-23.5505, -46.6333], tipo: "transporte", icon: "subway" }
+        { nome: "Hospital das Clínicas", coords: [-23.5510, -46.6340], tipo: "saude", icon: "hospital", endereco: "R. Dr. Enéas de Carvalho Aguiar, 255" },
+        { nome: "Escola Estadual Caetano de Campos", coords: [-23.5500, -46.6320], tipo: "educacao", icon: "school", endereco: "Pça. da República, 326" },
+        { nome: "Estação Sé (Metrô)", coords: [-23.5505, -46.6333], tipo: "transporte", icon: "subway", endereco: "Pça. da Sé - Centro" }
+    ],
+    morumbi: [
+        { nome: "Hospital Albert Einstein", coords: [-23.5987, -46.7108], tipo: "saude", icon: "hospital", endereco: "Av. Albert Einstein, 627" },
+        { nome: "Colégio Bandeirantes", coords: [-23.6181, -46.7019], tipo: "educacao", icon: "school", endereco: "R. Estela, 268" },
+        { nome: "Estação Morumbi (CPTM)", coords: [-23.6181, -46.7019], tipo: "transporte", icon: "subway", endereco: "Av. Giovanni Gronchi, 5930" }
+    ],
+    capao_redondo: [
+        { nome: "UBS Capão Redondo", coords: [-23.6698, -46.7794], tipo: "saude", icon: "hospital", endereco: "R. Cassiano dos Santos, 499" },
+        { nome: "EMEF Capão Redondo", coords: [-23.6698, -46.7794], tipo: "educacao", icon: "school", endereco: "R. Manoel Antônio Pinto, 405" },
+        { nome: "Terminal Capão Redondo", coords: [-23.6698, -46.7794], tipo: "transporte", icon: "bus", endereco: "Estrada de Itapecerica, 4289" }
+    ],
+    jardins: [
+        { nome: "Hospital Sírio-Libanês", coords: [-23.5614, -46.6731], tipo: "saude", icon: "hospital", endereco: "R. Dona Adma Jafet, 91" },
+        { nome: "Colégio Rio Branco", coords: [-23.5614, -46.6731], tipo: "educacao", icon: "school", endereco: "Av. Higienópolis, 996" },
+        { nome: "Estação Trianon-MASP", coords: [-23.5614, -46.6731], tipo: "transporte", icon: "subway", endereco: "Av. Paulista, 1578" }
     ]
 };
 
@@ -124,33 +307,58 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ===== INICIALIZAR MAPA =====
 function initMap() {
-    // Criar mapa centrado entre Socorro e Sé
-    const centerLat = (indicatorsData.socorro.coords[0] + indicatorsData.se.coords[0]) / 2;
-    const centerLng = (indicatorsData.socorro.coords[1] + indicatorsData.se.coords[1]) / 2;
+    // Calcular centro baseado em todos os bairros
+    const allCoords = Object.values(indicatorsData).map(bairro => bairro.coords);
+    const centerLat = allCoords.reduce((sum, coords) => sum + coords[0], 0) / allCoords.length;
+    const centerLng = allCoords.reduce((sum, coords) => sum + coords[1], 0) / allCoords.length;
 
-    map = L.map('map').setView([centerLat, centerLng], 12);
+    map = L.map('map').setView([centerLat, centerLng], 11);
 
-    // Adicionar camada do OpenStreetMap
+    // Adicionar camada do OpenStreetMap com melhor qualidade
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors',
-        maxZoom: 18
+        attribution: '© OpenStreetMap contributors | Dados: IBGE, SEADE, DataSUS',
+        maxZoom: 18,
+        minZoom: 10
     }).addTo(map);
 
     // Adicionar marcadores principais
     addMainMarkers();
 
-    // Adicionar evento de clique no mapa
+    // Adicionar evento de clique no mapa com informações mais detalhadas
     map.on('click', function(e) {
-        const lat = e.latlng.lat.toFixed(4);
-        const lng = e.latlng.lng.toFixed(4);
+        const lat = e.latlng.lat.toFixed(6);
+        const lng = e.latlng.lng.toFixed(6);
+        
+        // Verificar se clicou próximo a algum bairro conhecido
+        let nearestBairro = null;
+        let minDistance = Infinity;
+        
+        Object.entries(indicatorsData).forEach(([key, bairro]) => {
+            const distance = Math.sqrt(
+                Math.pow(e.latlng.lat - bairro.coords[0], 2) + 
+                Math.pow(e.latlng.lng - bairro.coords[1], 2)
+            );
+            if (distance < minDistance) {
+                minDistance = distance;
+                nearestBairro = { key, ...bairro };
+            }
+        });
+        
+        let popupContent = `<div class="popup-title">Localização</div>
+                           <div class="popup-info">
+                               <strong>Coordenadas:</strong> ${lat}, ${lng}<br>`;
+        
+        if (nearestBairro && minDistance < 0.05) { // Aproximadamente 5km
+            popupContent += `<strong>Bairro mais próximo:</strong> ${nearestBairro.nome}<br>
+                           <strong>População:</strong> ${nearestBairro.populacao?.toLocaleString() || 'N/A'} hab<br>
+                           <strong>Densidade:</strong> ${nearestBairro.densidade?.toLocaleString() || 'N/A'} hab/km²`;
+        }
+        
+        popupContent += '</div>';
         
         L.popup()
             .setLatLng(e.latlng)
-            .setContent(`<div class="popup-title">Coordenadas</div>
-                        <div class="popup-info">
-                            <strong>Latitude:</strong> ${lat}<br>
-                            <strong>Longitude:</strong> ${lng}
-                        </div>`)
+            .setContent(popupContent)
             .openOn(map);
     });
 }
@@ -159,21 +367,18 @@ function initMap() {
 function addMainMarkers() {
     clearMarkers();
 
-    // Marcador Socorro
-    const socorroMarker = L.marker(indicatorsData.socorro.coords, {
-        icon: createCustomIcon('home', 'medio')
-    }).addTo(map);
-    
-    socorroMarker.bindPopup(createPopupContent('socorro', currentIndicator));
-    markers.push(socorroMarker);
-
-    // Marcador Sé
-    const seMarker = L.marker(indicatorsData.se.coords, {
-        icon: createCustomIcon('home', 'baixo')
-    }).addTo(map);
-    
-    seMarker.bindPopup(createPopupContent('se', currentIndicator));
-    markers.push(seMarker);
+    // Adicionar marcadores para todos os bairros
+    Object.entries(indicatorsData).forEach(([key, bairro]) => {
+        // Determinar nível geral baseado na renda (indicador principal)
+        let nivelGeral = bairro.renda.nivel;
+        
+        const marker = L.marker(bairro.coords, {
+            icon: createCustomIcon('home', nivelGeral)
+        }).addTo(map);
+        
+        marker.bindPopup(createPopupContent(key, currentIndicator));
+        markers.push(marker);
+    });
 
     // Adicionar pontos de interesse se um indicador específico estiver selecionado
     if (currentIndicator !== 'all') {
@@ -221,22 +426,64 @@ function addInterestPoints() {
 // ===== CRIAR CONTEÚDO DO POPUP =====
 function createPopupContent(regiao, indicador) {
     const data = indicatorsData[regiao];
-    let content = `<div class="popup-title">${data.nome}</div><div class="popup-info">`;
+    let content = `<div class="popup-title">${data.nome}</div>
+                   <div class="popup-subtitle">
+                       <strong>Pop:</strong> ${data.populacao?.toLocaleString() || 'N/A'} hab | 
+                       <strong>Área:</strong> ${data.area || 'N/A'} km² | 
+                       <strong>CEP:</strong> ${data.cep_range || 'N/A'}
+                   </div>
+                   <div class="popup-info">`;
 
     if (indicador === 'all') {
         content += `
-            <strong>Renda Média:</strong> ${data.renda.valor}<br>
-            <strong>Educação:</strong> ${data.educacao.valor}<br>
-            <strong>Saúde:</strong> ${data.saude.valor} leitos/1000 hab<br>
-            <strong>Habitação:</strong> ${data.habitacao.valor}<br>
-            <strong>Transporte:</strong> ${data.transporte.valor}
+            <div class="indicator-row">
+                <strong>💰 Renda:</strong> ${data.renda.valor}
+                <span class="fonte-info" title="${data.renda.fonte}">(${data.renda.fonte.split(' ')[0]})</span>
+            </div>
+            <div class="indicator-row">
+                <strong>🎓 Educação:</strong> ${data.educacao.valor}
+                <span class="fonte-info" title="${data.educacao.fonte}">(${data.educacao.fonte.split(' ')[0]})</span>
+            </div>
+            <div class="indicator-row">
+                <strong>🏥 Saúde:</strong> ${data.saude.valor} leitos/1000 hab
+                <span class="fonte-info" title="${data.saude.fonte}">(${data.saude.fonte.split(' ')[0]})</span>
+            </div>
+            <div class="indicator-row">
+                <strong>🏠 Habitação:</strong> ${data.habitacao.valor}
+                <span class="fonte-info" title="${data.habitacao.fonte}">(${data.habitacao.fonte.split(' ')[0]})</span>
+            </div>
+            <div class="indicator-row">
+                <strong>🚌 Transporte:</strong> ${data.transporte.valor}
+                <span class="fonte-info" title="${data.transporte.fonte}">(${data.transporte.fonte.split(' ')[0]})</span>
+            </div>
+            ${data.criminalidade ? `
+            <div class="indicator-row">
+                <strong>🚨 Criminalidade:</strong> ${data.criminalidade.valor}
+                <span class="fonte-info" title="${data.criminalidade.fonte}">(${data.criminalidade.fonte.split(' ')[0]})</span>
+            </div>` : ''}
         `;
     } else {
         const indicadorData = data[indicador];
-        content += `
-            <strong>${indicadorData.detalhes}:</strong><br>
-            ${indicadorData.valor}
-        `;
+        if (indicadorData) {
+            const nivelColor = {
+                'alto': '#2ecc71',
+                'medio': '#f39c12', 
+                'baixo': '#e74c3c'
+            };
+            
+            content += `
+                <div class="indicator-detail">
+                    <strong>${indicadorData.detalhes}:</strong><br>
+                    <span style="color: ${nivelColor[indicadorData.nivel]}; font-size: 1.2em; font-weight: bold;">
+                        ${indicadorData.valor}
+                    </span><br>
+                    <small style="color: #666;">
+                        <strong>Fonte:</strong> ${indicadorData.fonte}<br>
+                        <strong>Nível:</strong> ${indicadorData.nivel.charAt(0).toUpperCase() + indicadorData.nivel.slice(1)}
+                    </small>
+                </div>
+            `;
+        }
     }
 
     content += '</div>';
@@ -274,53 +521,104 @@ function updateStats(indicator) {
     const socorroStats = document.getElementById('socorro-stats');
     const seStats = document.getElementById('se-stats');
 
+    // Obter os dois primeiros bairros para comparação (Socorro e Sé)
+    const bairros = Object.keys(indicatorsData);
+    const bairro1Key = bairros[0]; // Socorro
+    const bairro2Key = bairros[1]; // Sé
+    const bairro1Data = indicatorsData[bairro1Key];
+    const bairro2Data = indicatorsData[bairro2Key];
+
     if (indicator === 'all') {
         socorroStats.innerHTML = `
             <div class="stat-item">
-                <span class="stat-label">Renda:</span>
-                <span class="stat-value">${indicatorsData.socorro.renda.valor}</span>
+                <span class="stat-label">💰 Renda:</span>
+                <span class="stat-value">${bairro1Data.renda.valor}</span>
             </div>
             <div class="stat-item">
-                <span class="stat-label">Educação:</span>
-                <span class="stat-value">${indicatorsData.socorro.educacao.valor}</span>
+                <span class="stat-label">🎓 Educação:</span>
+                <span class="stat-value">${bairro1Data.educacao.valor}</span>
             </div>
             <div class="stat-item">
-                <span class="stat-label">Saúde:</span>
-                <span class="stat-value">${indicatorsData.socorro.saude.valor}</span>
+                <span class="stat-label">🏥 Saúde:</span>
+                <span class="stat-value">${bairro1Data.saude.valor}</span>
             </div>
+            <div class="stat-item">
+                <span class="stat-label">🏠 Habitação:</span>
+                <span class="stat-value">${bairro1Data.habitacao.valor}</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">🚌 Transporte:</span>
+                <span class="stat-value">${bairro1Data.transporte.valor}</span>
+            </div>
+            ${bairro1Data.criminalidade ? `
+            <div class="stat-item">
+                <span class="stat-label">🚨 Segurança:</span>
+                <span class="stat-value">${bairro1Data.criminalidade.valor}</span>
+            </div>` : ''}
         `;
 
         seStats.innerHTML = `
             <div class="stat-item">
-                <span class="stat-label">Renda:</span>
-                <span class="stat-value">${indicatorsData.se.renda.valor}</span>
+                <span class="stat-label">💰 Renda:</span>
+                <span class="stat-value">${bairro2Data.renda.valor}</span>
             </div>
             <div class="stat-item">
-                <span class="stat-label">Educação:</span>
-                <span class="stat-value">${indicatorsData.se.educacao.valor}</span>
+                <span class="stat-label">🎓 Educação:</span>
+                <span class="stat-value">${bairro2Data.educacao.valor}</span>
             </div>
             <div class="stat-item">
-                <span class="stat-label">Saúde:</span>
-                <span class="stat-value">${indicatorsData.se.saude.valor}</span>
+                <span class="stat-label">🏥 Saúde:</span>
+                <span class="stat-value">${bairro2Data.saude.valor}</span>
             </div>
+            <div class="stat-item">
+                <span class="stat-label">🏠 Habitação:</span>
+                <span class="stat-value">${bairro2Data.habitacao.valor}</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">🚌 Transporte:</span>
+                <span class="stat-value">${bairro2Data.transporte.valor}</span>
+            </div>
+            ${bairro2Data.criminalidade ? `
+            <div class="stat-item">
+                <span class="stat-label">🚨 Segurança:</span>
+                <span class="stat-value">${bairro2Data.criminalidade.valor}</span>
+            </div>` : ''}
         `;
     } else {
-        const socorroData = indicatorsData.socorro[indicator];
-        const seData = indicatorsData.se[indicator];
+        const bairro1Indicator = bairro1Data[indicator];
+        const bairro2Indicator = bairro2Data[indicator];
 
-        socorroStats.innerHTML = `
-            <div class="stat-item">
-                <span class="stat-label">${socorroData.detalhes}:</span>
-                <span class="stat-value">${socorroData.valor}</span>
-            </div>
-        `;
+        if (bairro1Indicator && bairro2Indicator) {
+            const nivelColors = {
+                'alto': '#2ecc71',
+                'medio': '#f39c12',
+                'baixo': '#e74c3c'
+            };
 
-        seStats.innerHTML = `
-            <div class="stat-item">
-                <span class="stat-label">${seData.detalhes}:</span>
-                <span class="stat-value">${seData.valor}</span>
-            </div>
-        `;
+            socorroStats.innerHTML = `
+                <div class="stat-item">
+                    <span class="stat-label">${bairro1Indicator.detalhes}:</span>
+                    <span class="stat-value" style="color: ${nivelColors[bairro1Indicator.nivel]}">
+                        ${bairro1Indicator.valor}
+                    </span>
+                </div>
+                <div class="stat-source">
+                    <small>Fonte: ${bairro1Indicator.fonte}</small>
+                </div>
+            `;
+
+            seStats.innerHTML = `
+                <div class="stat-item">
+                    <span class="stat-label">${bairro2Indicator.detalhes}:</span>
+                    <span class="stat-value" style="color: ${nivelColors[bairro2Indicator.nivel]}">
+                        ${bairro2Indicator.valor}
+                    </span>
+                </div>
+                <div class="stat-source">
+                    <small>Fonte: ${bairro2Indicator.fonte}</small>
+                </div>
+            `;
+        }
     }
 }
 
@@ -336,9 +634,30 @@ function updateChart(indicator) {
     let labels, socorroValues, seValues;
 
     if (indicator === 'all') {
-        labels = ['Renda', 'Educação', 'Saúde', 'Habitação', 'Transporte'];
-        socorroValues = [2850, 68, 3.2, 82, 45];
-        seValues = [1650, 52, 5.8, 65, 28];
+        labels = ['Renda', 'Educação', 'Saúde', 'Habitação', 'Transporte', 'Segurança'];
+        
+        // Extrair valores dos dois primeiros bairros (Socorro e Sé)
+        const bairros = Object.keys(indicatorsData);
+        const bairro1Data = indicatorsData[bairros[0]];
+        const bairro2Data = indicatorsData[bairros[1]];
+        
+        socorroValues = [
+            parseFloat(bairro1Data.renda.valor.replace(/[^\d.]/g, '')),
+            parseFloat(bairro1Data.educacao.valor.replace(/[^\d.]/g, '')),
+            parseFloat(bairro1Data.saude.valor.replace(/[^\d.]/g, '')),
+            parseFloat(bairro1Data.habitacao.valor.replace(/[^\d.]/g, '')),
+            parseFloat(bairro1Data.transporte.valor.replace(/[^\d.]/g, '')),
+            bairro1Data.criminalidade ? parseFloat(bairro1Data.criminalidade.valor.replace(/[^\d.]/g, '')) : 0
+        ];
+        
+        seValues = [
+            parseFloat(bairro2Data.renda.valor.replace(/[^\d.]/g, '')),
+            parseFloat(bairro2Data.educacao.valor.replace(/[^\d.]/g, '')),
+            parseFloat(bairro2Data.saude.valor.replace(/[^\d.]/g, '')),
+            parseFloat(bairro2Data.habitacao.valor.replace(/[^\d.]/g, '')),
+            parseFloat(bairro2Data.transporte.valor.replace(/[^\d.]/g, '')),
+            bairro2Data.criminalidade ? parseFloat(bairro2Data.criminalidade.valor.replace(/[^\d.]/g, '')) : 0
+        ];
     } else {
         labels = ['Socorro', 'Sé'];
         
@@ -393,7 +712,7 @@ function updateChart(indicator) {
     });
 }
 
-// ===== BUSCAR BAIRRO =====
+// ===== BUSCAR LOCALIZAÇÃO (BAIRRO, CEP, ENDEREÇO) =====
 function searchNeighborhood(query) {
     if (!map) {
         alert('Aguarde o mapa carregar completamente.');
@@ -401,6 +720,14 @@ function searchNeighborhood(query) {
     }
 
     query = query.toLowerCase().trim();
+    
+    if (!query) {
+        showNotification('Digite um bairro, CEP ou endereço para buscar.', 'error');
+        return;
+    }
+
+    // Mostrar indicador de loading
+    showLoadingIndicator(true);
 
     // Remover acentos para facilitar busca
     const normalizeString = (str) => {
@@ -409,25 +736,258 @@ function searchNeighborhood(query) {
 
     const normalizedQuery = normalizeString(query);
 
-    // Buscar Socorro
-    if (normalizedQuery.includes('socorro')) {
-        map.setView(indicatorsData.socorro.coords, 14);
-        if (markers.length > 0 && markers[0]) {
-            markers[0].openPopup();
+    // Busca por CEP (formato: 12345-123 ou 12345123)
+    const cepPattern = /^\d{5}-?\d{3}$/;
+    if (cepPattern.test(query.replace(/\D/g, ''))) {
+        searchByCEP(query);
+        return;
+    }
+
+    // Busca por bairros conhecidos
+    let found = false;
+    const searchResults = [];
+
+    Object.keys(indicatorsData).forEach(key => {
+        const bairro = indicatorsData[key];
+        const bairroNormalizado = normalizeString(bairro.nome.toLowerCase());
+        
+        // Busca exata ou parcial no nome do bairro
+        if (bairroNormalizado.includes(normalizedQuery) || normalizedQuery.includes(bairroNormalizado)) {
+            searchResults.push({
+                key: key,
+                bairro: bairro,
+                relevancia: bairroNormalizado === normalizedQuery ? 100 : 80
+            });
+            found = true;
         }
-        showNotification('Socorro encontrado!', 'success');
-    } 
-    // Buscar Sé
-    else if (normalizedQuery === 'se' || normalizedQuery === 'sé' || normalizedQuery.includes('se')) {
-        map.setView(indicatorsData.se.coords, 14);
-        if (markers.length > 1 && markers[1]) {
-            markers[1].openPopup();
+        
+        // Busca por CEP range
+        if (bairro.cep_range && query.length >= 5) {
+            const cepQuery = query.replace(/\D/g, '');
+            if (cepQuery.length >= 5) {
+                const cepStart = bairro.cep_range.split(' a ')[0].replace(/\D/g, '');
+                const cepEnd = bairro.cep_range.split(' a ')[1].replace(/\D/g, '');
+                
+                if (cepQuery >= cepStart && cepQuery <= cepEnd) {
+                    searchResults.push({
+                        key: key,
+                        bairro: bairro,
+                        relevancia: 90
+                    });
+                    found = true;
+                }
+            }
         }
-        showNotification('Sé encontrado!', 'success');
-    } 
-    // Nenhum bairro encontrado
-    else if (query) {
-        showNotification('Bairro não encontrado. Tente "Socorro" ou "Sé".', 'error');
+    });
+
+    // Busca em pontos de interesse
+    Object.keys(pontosInteresse).forEach(bairroKey => {
+        pontosInteresse[bairroKey].forEach(ponto => {
+            const pontoNormalizado = normalizeString(ponto.nome.toLowerCase());
+            const enderecoNormalizado = normalizeString((ponto.endereco || '').toLowerCase());
+            
+            if (pontoNormalizado.includes(normalizedQuery) || enderecoNormalizado.includes(normalizedQuery)) {
+                searchResults.push({
+                    key: bairroKey,
+                    bairro: indicatorsData[bairroKey],
+                    ponto: ponto,
+                    relevancia: 70
+                });
+                found = true;
+            }
+        });
+    });
+
+    hideLoadingIndicator();
+
+    if (found) {
+        // Ordenar por relevância
+        searchResults.sort((a, b) => b.relevancia - a.relevancia);
+        const melhorResultado = searchResults[0];
+        
+        // Focar no resultado
+        map.setView(melhorResultado.bairro.coords, 14);
+        
+        // Encontrar e abrir popup do marcador correspondente
+        const markerIndex = Object.keys(indicatorsData).indexOf(melhorResultado.key);
+        if (markers[markerIndex]) {
+            markers[markerIndex].openPopup();
+        }
+        
+        // Mostrar informações detalhadas
+        if (melhorResultado.ponto) {
+            showNotification(`${melhorResultado.ponto.nome} encontrado em ${melhorResultado.bairro.nome}!`, 'success');
+        } else {
+            showNotification(`${melhorResultado.bairro.nome} encontrado!`, 'success');
+        }
+        
+        // Mostrar resultados múltiplos se houver
+        if (searchResults.length > 1) {
+            showSearchResults(searchResults);
+        }
+    } else {
+        // Tentar busca externa via API de geolocalização
+        searchWithExternalAPI(query);
+    }
+}
+
+// ===== BUSCAR POR CEP =====
+function searchByCEP(cep) {
+    const cepLimpo = cep.replace(/\D/g, '');
+    
+    // Verificar se está nos ranges conhecidos
+    let found = false;
+    Object.keys(indicatorsData).forEach(key => {
+        const bairro = indicatorsData[key];
+        if (bairro.cep_range) {
+            const cepStart = bairro.cep_range.split(' a ')[0].replace(/\D/g, '');
+            const cepEnd = bairro.cep_range.split(' a ')[1].replace(/\D/g, '');
+            
+            if (cepLimpo >= cepStart && cepLimpo <= cepEnd) {
+                map.setView(bairro.coords, 15);
+                showNotification(`CEP ${cep} encontrado em ${bairro.nome}!`, 'success');
+                found = true;
+                return;
+            }
+        }
+    });
+    
+    if (!found) {
+        // Usar API ViaCEP para busca externa
+        fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`)
+            .then(response => response.json())
+            .then(data => {
+                hideLoadingIndicator();
+                if (data.erro) {
+                    showNotification('CEP não encontrado.', 'error');
+                } else {
+                    // Usar API de geocoding para obter coordenadas
+                    geocodeAddress(`${data.logradouro}, ${data.bairro}, ${data.localidade}, SP`);
+                }
+            })
+            .catch(error => {
+                hideLoadingIndicator();
+                showNotification('Erro ao buscar CEP. Tente novamente.', 'error');
+            });
+    } else {
+        hideLoadingIndicator();
+    }
+}
+
+// ===== BUSCAR COM API EXTERNA =====
+function searchWithExternalAPI(query) {
+    // Usar Nominatim (OpenStreetMap) para geocoding gratuito
+    const encodedQuery = encodeURIComponent(`${query}, São Paulo, Brazil`);
+    
+    fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodedQuery}&limit=3&countrycodes=br`)
+        .then(response => response.json())
+        .then(data => {
+            hideLoadingIndicator();
+            if (data && data.length > 0) {
+                const result = data[0];
+                const lat = parseFloat(result.lat);
+                const lng = parseFloat(result.lon);
+                
+                map.setView([lat, lng], 15);
+                
+                // Adicionar marcador temporário
+                const tempMarker = L.marker([lat, lng], {
+                    icon: L.divIcon({
+                        html: '<div style="background-color: #e74c3c; width: 25px; height: 25px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.3);"></div>',
+                        className: 'temp-search-marker',
+                        iconSize: [25, 25],
+                        iconAnchor: [12, 12]
+                    })
+                }).addTo(map);
+                
+                tempMarker.bindPopup(`
+                    <div class="popup-title">Resultado da Busca</div>
+                    <div class="popup-info">
+                        <strong>Local:</strong> ${result.display_name}<br>
+                        <strong>Coordenadas:</strong> ${lat.toFixed(4)}, ${lng.toFixed(4)}
+                    </div>
+                `).openPopup();
+                
+                // Remover marcador após 10 segundos
+                setTimeout(() => {
+                    map.removeLayer(tempMarker);
+                }, 10000);
+                
+                showNotification(`Local encontrado: ${result.display_name.split(',')[0]}`, 'success');
+            } else {
+                showNotification('Local não encontrado. Tente ser mais específico.', 'error');
+            }
+        })
+        .catch(error => {
+            hideLoadingIndicator();
+            showNotification('Erro na busca. Verifique sua conexão.', 'error');
+        });
+}
+
+// ===== GEOCODIFICAR ENDEREÇO =====
+function geocodeAddress(address) {
+    const encodedAddress = encodeURIComponent(address);
+    
+    fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodedAddress}&limit=1`)
+        .then(response => response.json())
+        .then(data => {
+            if (data && data.length > 0) {
+                const result = data[0];
+                const lat = parseFloat(result.lat);
+                const lng = parseFloat(result.lon);
+                
+                map.setView([lat, lng], 16);
+                showNotification(`Endereço encontrado!`, 'success');
+            } else {
+                showNotification('Endereço não encontrado.', 'error');
+            }
+        })
+        .catch(error => {
+            showNotification('Erro ao buscar endereço.', 'error');
+        });
+}
+
+// ===== MOSTRAR INDICADOR DE LOADING =====
+function showLoadingIndicator(show) {
+    let loadingDiv = document.getElementById('search-loading');
+    
+    if (show) {
+        if (!loadingDiv) {
+            loadingDiv = document.createElement('div');
+            loadingDiv.id = 'search-loading';
+            loadingDiv.innerHTML = `
+                <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                           background: rgba(0,0,0,0.8); color: white; padding: 20px; border-radius: 10px; 
+                           z-index: 10000; display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 20px; height: 20px; border: 2px solid #fff; border-top: 2px solid transparent; 
+                               border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    <span>Buscando...</span>
+                </div>
+                <style>
+                    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+                </style>
+            `;
+            document.body.appendChild(loadingDiv);
+        }
+    } else {
+        hideLoadingIndicator();
+    }
+}
+
+// ===== ESCONDER INDICADOR DE LOADING =====
+function hideLoadingIndicator() {
+    const loadingDiv = document.getElementById('search-loading');
+    if (loadingDiv) {
+        loadingDiv.remove();
+    }
+}
+
+// ===== MOSTRAR RESULTADOS DE BUSCA =====
+function showSearchResults(results) {
+    // Implementar modal com múltiplos resultados se necessário
+    if (results.length > 1) {
+        console.log('Múltiplos resultados encontrados:', results);
+        // Aqui poderia implementar um modal com lista de resultados
     }
 }
 

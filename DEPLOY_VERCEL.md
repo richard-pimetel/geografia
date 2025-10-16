@@ -126,7 +126,7 @@ Segue o link do projeto "Mapa da Desigualdade - São Paulo",
 desenvolvido para a disciplina de Geografia Urbana.
 
 🔗 LINK DO PROJETO ONLINE:
-https://seu-link-aqui.vercel.app
+https://geografia-one.vercel.app
 
 O projeto está hospedado na plataforma Vercel e pode ser acessado 
 diretamente pelo navegador, sem necessidade de download ou instalação.
